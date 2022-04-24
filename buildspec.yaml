@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - docker build -t test .
+  post_build: 
+    commands: 
+      - docker run -d --name test test
+      - docker logs test
